@@ -25,8 +25,13 @@ unsetopt EXTENDED_HISTORY
 
 
 # Keys
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down      
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^[[3~" delete-char
 bindkey "^[[3;5~" delete-char
 bindkey '^H' backward-kill-word
@@ -36,7 +41,8 @@ bindkey '\e[11~' "urxvt &\n"
 
 
 # Aliases
-alias vimdiff='nvim -d'
+alias -g vim='nvim'
+alias -g vi='vim'
 alias -g grep='grep --color=always'
 alias -g gvim='nvim-qt'
 alias -g img='eog'
@@ -51,6 +57,10 @@ alias -g sl='sl -ead -999'
 alias -g ssh='ssh -Y -C'
 
 # Fuzzy search // TODO
+source /usr/share/fzf/shell/key-bindings.zsh
+
+# Syntax highlighting
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
 
 # Enable starship
 eval "$(starship init zsh)"
