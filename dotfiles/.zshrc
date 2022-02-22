@@ -50,5 +50,7 @@ alias -g reboot='read \?"Reboot? ENTER/Ctrl+C " && env reboot'
 alias -g sl='sl -ead -999'
 alias -g ssh='ssh -Y -C'
 
-
 # Fuzzy search // TODO
+
+# Enable starship
+eval "$(starship init zsh)"
