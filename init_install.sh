@@ -19,7 +19,6 @@ groups="dialout audio video networkmanager libvirtd docker"
 for group in $groups; do
     sudo groupadd -r $group;
     sudo usermod -aG $group $USER
-    newgrp $group
 done
 
 # Install flatpak applications
