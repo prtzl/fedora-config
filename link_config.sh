@@ -14,4 +14,8 @@ ln -s starship.toml ~/.config/starship.toml
 rm -f ~/.zshrc
 ln -s .zshrc ~/.zshrc
 
+# Git
+rm -f ~/.gitconfig
+ln -s .gitconfig ~/.gitconfig
+
 popd
