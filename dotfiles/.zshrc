@@ -9,9 +9,11 @@ zstyle ':completion:*' group-name ""
 zstyle ':completion:*' matcher-list "" 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 _comp_options+=(globdots)
 
+
 # ENV variables
 export EDITOR="nvim"
 export TERM="xterm-256color"
+
 
 # History
 HISTSIZE="10000"
@@ -59,11 +61,17 @@ alias -g reboot='read \?"Reboot? ENTER/Ctrl+C " && env reboot'
 alias -g sl='sl -ead -999'
 alias -g ssh='ssh -Y -C'
 
-# Fuzzy search // TODO
+# Autosuggestion
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+# Fuzzy search
 source /usr/share/fzf/shell/key-bindings.zsh
+
 
 # Syntax highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
+
 
 # Enable starship
 eval "$(starship init zsh)"
