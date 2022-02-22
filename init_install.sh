@@ -6,7 +6,7 @@ packages="zsh git neovim net-tools util-linux-user dnf-plugins-core \
           transmission \
           arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ arm-none-eabi-newlib \
           gcc make cmake \
-          bridge-utils libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools"
+          bridge-utils virt-manager libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools"
 
 # Install basic dev packages
 sudo dnf check-update
