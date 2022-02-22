@@ -1,7 +1,7 @@
 #! /usr/bin/env sh
 
 packages="zsh git neovim net-tools util-linux-user dnf-plugins-core \
-          eog celluloid vlc flatpak xreader \
+          eog celluloid vlc flatpak xreader gnome-tweaks gnome-extensions \
           zsh-syntax-highlighting starship alacritty \
           transmission \
           arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ \
