@@ -72,6 +72,5 @@ source /usr/share/fzf/shell/key-bindings.zsh
 # Syntax highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
 
-
 # Enable starship
 eval "$(starship init zsh)"
