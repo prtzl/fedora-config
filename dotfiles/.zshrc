@@ -9,6 +9,9 @@ zstyle ':completion:*' group-name ""
 zstyle ':completion:*' matcher-list "" 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 _comp_options+=(globdots)
 
+# ENV variables
+export EDITOR="nvim"
+export TERM="xterm-256color"
 
 # History
 HISTSIZE="10000"
