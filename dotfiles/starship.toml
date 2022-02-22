@@ -1,0 +1,54 @@
+add_newline = false
+
+[character]
+error_symbol = "[»](bold green)"
+success_symbol = "[»](bold green)"
+vicmd_symbol = "[«](bold green)"
+
+[cmake]
+disabled = true
+
+[directory]
+disabled = false
+format = "[:$path]($style)"
+style = "bold cyan"
+truncate_to_repo = false
+truncation_length = 10
+
+[git_branch]
+format = "[ $symbol$branch]($style)"
+style = "bold purple"
+
+[git_status]
+ahead = "⇡($count)"
+behind = "⇣($count)"
+conflicted = "🏳"
+diverged = "⇕⇡($ahead_count)⇣($behind_count)"
+format = "[ $all_status]($style)"
+modified = "📝"
+staged = "[++($count)](green)"
+stashed = "📦"
+style = " bold yellow"
+untracked = "🤷"
+up_to_date = "✓"
+
+[hostname]
+disabled = false
+format = "[@$hostname]($style)"
+ssh_only = false
+style = "bold dimmed green"
+
+[nix_shell]
+format = "[ $symbol  $name ]($style)"
+style = "bold blue"
+symbol = "❄️"
+
+[python]
+disabled = true
+
+[username]
+disabled = false
+format = "[$user]($style)"
+show_always = true
+style_root = "bold red"
+style_user = "blue yellow"
