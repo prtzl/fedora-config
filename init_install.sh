@@ -4,7 +4,7 @@ packages="zsh git neovim net-tools util-linux-user dnf-plugins-core \
           eog celluloid vlc flatpak xreader gnome-tweaks gnome-extensions-app \
           zsh-syntax-highlighting starship alacritty \
           transmission \
-          arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ \
+          arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ arm-none-eabi-newlib \
           gcc make cmake \
           bridge-utils libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools"
 
