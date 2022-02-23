@@ -5,8 +5,18 @@ error_symbol = "[»](bold green)"
 success_symbol = "[»](bold green)"
 vicmd_symbol = "[«](bold green)"
 
-[cmake]
-disabled = true
+[username]
+disabled = false
+format = "[$user]($style)"
+show_always = true
+style_root = "bold red"
+style_user = "blue yellow"
+
+[hostname]
+disabled = false
+format = "[@$hostname]($style)"
+ssh_only = false
+style = "bold dimmed green"
 
 [directory]
 disabled = false
@@ -19,24 +29,21 @@ truncation_length = 10
 format = "[ $symbol$branch]($style)"
 style = "bold purple"
 
+[git_commit]
+only_detached = false
+
 [git_status]
 ahead = "⇡($count)"
 behind = "⇣($count)"
 conflicted = "🏳"
 diverged = "⇕⇡($ahead_count)⇣($behind_count)"
-format = "[ $all_status]($style)"
+format = '([\[$all_status$ahead_behind\]]($style) )'
 modified = "📝"
 staged = "[++($count)](green)"
 stashed = "📦"
 style = " bold yellow"
 untracked = "🤷"
 up_to_date = "✓"
-
-[hostname]
-disabled = false
-format = "[@$hostname]($style)"
-ssh_only = false
-style = "bold dimmed green"
 
 [nix_shell]
 format = "[ $symbol  $name ]($style)"
@@ -46,9 +53,7 @@ symbol = "❄️"
 [python]
 disabled = true
 
-[username]
-disabled = false
-format = "[$user]($style)"
-show_always = true
-style_root = "bold red"
-style_user = "blue yellow"
+[cmake]
+disabled = true
+
+
