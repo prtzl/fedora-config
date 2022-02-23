@@ -61,6 +61,7 @@ alias -g reboot='read \?"Reboot? ENTER/Ctrl+C " && env reboot'
 alias -g sl='sl -ead -999'
 alias -g ssh='ssh -Y -C'
 
+
 # Autosuggestion
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -71,6 +72,7 @@ source /usr/share/fzf/shell/key-bindings.zsh
 
 # Syntax highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
+
 
 # Enable starship
 eval "$(starship init zsh)"
