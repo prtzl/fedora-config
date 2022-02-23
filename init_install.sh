@@ -1,11 +1,11 @@
 #! /usr/bin/env sh
 
-packages="zsh git neovim net-tools util-linux-user dnf-plugins-core \
+packages="zsh git neovim net-tools xclip util-linux-user dnf-plugins-core \
           eog celluloid vlc flatpak xreader gnome-tweaks gnome-extensions-app \
           zsh-syntax-highlighting starship alacritty fzf zsh-autosuggestions \
           transmission \
           arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ arm-none-eabi-newlib \
-          gcc make cmake \
+          gcc g++ make cmake \
           bridge-utils virt-manager libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools"
 
 # Install basic dev packages
