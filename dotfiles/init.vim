@@ -47,5 +47,14 @@ set backspace=indent,eol,start
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
+" Auto bracket closing
+imap "<tab> ""<Left>
+imap '<tab> ''<Left>
+imap (<tab> ()<Left>
+imap [<tab> []<Left>
+imap {<tab> {}<Left>
+imap {<CR> {<CR>}<ESC>O
+imap {;<CR> {<CR>};<ESC>O
+
 " Experiments
 set wildmode=list:full
