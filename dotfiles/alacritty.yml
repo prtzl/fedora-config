@@ -4,7 +4,7 @@ window:
     y: 5
 
   title: ""
-  dynamic_title: true
+  dynamic_title: false
 
 font:
   size: 12.0
