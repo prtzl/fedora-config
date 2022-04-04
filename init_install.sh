@@ -6,7 +6,8 @@ packages="zsh git neovim net-tools xclip util-linux-user dnf-plugins-core \
           transmission \
           arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ arm-none-eabi-newlib \
           gcc g++ make cmake \
-          bridge-utils virt-manager libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools"
+          bridge-utils virt-manager libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools \
+          direnv"
 
 # Install basic dev packages
 sudo dnf check-update
@@ -32,3 +33,11 @@ sudo dnf install -yy docker-ce docker-ce-cli containerd.io
 sudo systemctl enable docker
 sudo systemctl start docker
 
+# Link dotfiles (before nix)
+./link_config.sh
+
+# Install nix
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+
+# Install direnv for nix (plugin)
+git clone https://github.com/nix-community/nix-direnv ~/nix-direnv

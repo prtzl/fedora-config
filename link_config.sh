@@ -24,4 +24,12 @@ rm -rf ~/.config/nvim
 mkdir -p ~/.config/nvim
 ln -s $PWD/init.vim ~/.config/nvim/init.vim
 
+# Nix
+rm -rf ~/.config/nix
+mkdir -p ~/.config/nix
+ln -s $PWD/nix.conf ~/.config/nix/nix.conf
+
+rm -f ~/.direnvrc
+ln -s $PWD/.direnvrc ~/.direnvrc
+
 popd

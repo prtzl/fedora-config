@@ -76,3 +76,7 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/nu
 
 # Enable starship
 eval "$(starship init zsh)"
+
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+eval "$(direnv hook zsh)"
