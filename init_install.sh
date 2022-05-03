@@ -33,11 +33,12 @@ sudo dnf install -yy docker-ce docker-ce-cli containerd.io
 sudo systemctl enable docker
 sudo systemctl start docker
 
-# Link dotfiles (before nix)
-./link_config.sh
-
 # Install nix
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 # Install direnv for nix (plugin)
 git clone https://github.com/nix-community/nix-direnv ~/nix-direnv
+
+# Link dotfiles (will replace any existing)
+./link_config.sh
+
