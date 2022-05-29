@@ -46,19 +46,23 @@ bindkey '\e[11~' "urxvt &\n"
 
 
 # Aliases
-alias -g vim='nvim'
-alias -g vi='vim'
-alias -g grep='grep --color=always'
-alias -g gvim='nvim-qt'
-alias -g img='eog'
-alias -g l='ls -la'
-alias -g ll='ls -l'
-alias -g ls='ls --group-directories-first --color=auto'
-alias -g pdf='evince'
-alias -g play='celluloid'
-alias -g poweroff='read \?"Poweroff? ENTER/Ctrl+C " && env poweroff'
-alias -g reboot='read \?"Reboot? ENTER/Ctrl+C " && env reboot'
-alias -g sl='sl -ead -999'
+alias vim='nvim'
+alias vi='vim'
+alias grep='grep --color=always'
+alias gvim='nvim-qt'
+alias img='eog'
+alias l='ls -la'
+alias ll='ls -l'
+alias ls='ls --group-directories-first --color=auto'
+alias pdf='evince'
+alias play='celluloid'
+alias poweroff='read -s \?"Poweroff? [ENTER]: " && if [ -z "$REPLY" ];then evn poweroff;else echo "Canceled";fi'
+alias reboot='read -s \?"Reboot? [ENTER]: " && if [ -z "$REPLY" ];then evn reboot;else echo "Canceled";fi'
+alias sl='sl -eade-999'
+
+
+# Suffix aliases
+alias -s {txt,md,c,cpp,h,hpp,py,vhd}=vi
 
 
 # Autosuggestion
@@ -76,6 +80,8 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/nu
 # Enable starship
 eval "$(starship init zsh)"
 
+# Nix
+export GIT_SSH_COMMAND="/usr/bin/ssh"
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 eval "$(direnv hook zsh)"
