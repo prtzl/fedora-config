@@ -56,8 +56,8 @@ alias ll='ls -l'
 alias ls='ls --group-directories-first --color=auto'
 alias pdf='evince'
 alias play='celluloid'
-alias poweroff='read -s \?"Poweroff? [ENTER]: " && if [ -z "$REPLY" ];then evn poweroff;else echo "Canceled";fi'
-alias reboot='read -s \?"Reboot? [ENTER]: " && if [ -z "$REPLY" ];then evn reboot;else echo "Canceled";fi'
+alias poweroff='read -s \?"Poweroff? [ENTER]: " && if [ -z "$REPLY" ];then env poweroff;else echo "Canceled";fi'
+alias reboot='read -s \?"Reboot? [ENTER]: " && if [ -z "$REPLY" ];then env reboot;else echo "Canceled";fi'
 alias sl='sl -eade-999'
 
 
