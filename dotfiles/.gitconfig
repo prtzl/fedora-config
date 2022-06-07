@@ -1,5 +1,9 @@
+[init]
+    defaultBranch = "master"
+
 [core "init"]
-	defaultBranch = "master"
+    defaultBranch = "master"
 
 [push]
-	default = "current"
+    default = "current"
+
