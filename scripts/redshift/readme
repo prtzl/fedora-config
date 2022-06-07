@@ -1,0 +1,13 @@
+# Automatic redshift service with timer
+
+This will (re)apply redshift on a timer. This is usefull, when disconnecting a display or sleeping the computer resets the screen color.
+
+Link redshift.service and redshift.timer to: `~/.config/systemd/user`
+
+Run once:
+systemctl --user daemon-reload
+systemctl --user enable redshift.timer
+systemctl --user enable resdhift.service
+systemctl --user start redshift.timer
+
+NOTE: Disabling a serice `systemctl --user disable redshift.[service,timer] will remove the links from ~/.config/systemd/user`. If you do that, re-link them.
