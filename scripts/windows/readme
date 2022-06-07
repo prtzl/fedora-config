@@ -1,0 +1,10 @@
+# Save and restore window states
+
+Cinnamon, unlike gnome (in my experience) does not save window states between switching external monitors. When I leave my desk with connected monitor, all windows go to the same screen. When I reconnect the monitor, those windows don't reorganize.
+
+For now, there is no automation. I added a keyboard shortcuts. `Super + s` to save and `Super + r` to restore. The state is save to ~/.cache/winstate.
+
+PS:
+Gnome (41) works slow (gets slower and slower over the day) and takes long ass time to go to sleep and sometimes doesn't wake up - black screen, restart gnome-shell and hope it works (windows get shuffled in the process). So yeah, I would like the performance and stability of cinnamon. This feature is all it lacks, everything else is the same or better. Go figure :O
+
+
