@@ -32,4 +32,8 @@ ln -s $PWD/nix.conf ~/.config/nix/nix.conf
 rm -f ~/.direnvrc
 ln -s $PWD/.direnvrc ~/.direnvrc
 
+# Tmux
+rm -f ~/.tmux.conf
+ln -s $PWD/.tmux.conf ~/.tmux.conf
+
 popd
