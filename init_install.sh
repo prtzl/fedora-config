@@ -1,19 +1,31 @@
 #! /usr/bin/env sh
 
-packages="zsh git neovim net-tools xclip util-linux-user dnf-plugins-core \
-          eog celluloid vlc flatpak xreader gnome-tweaks gnome-extensions-app \
-          zsh-syntax-highlighting starship alacritty fzf zsh-autosuggestions \
-          transmission \
-          arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ arm-none-eabi-newlib \
-          gcc g++ make cmake \
-          bridge-utils virt-manager libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools \
-          direnv"
+packages_shell= "zsh tmux zsh-syntax-highlighting starship alacritty fzf \
+                zsh-autosuggestions direnv neovim"
+
+packages_media= "eog celluloid vlc xreader transmission gimp chromium \
+                skypeforlinux texlive-scheme-full texstudio"
+
+packages_tools= "git net-tools xclip util-linux-user dnf-plugins-core flatpak \
+                megasync tio neofetch htop subversion p7zip redshift \
+                wmctrl xdotool"
+
+packages_virt=  "bridge-utils virt-manager libvirt virt-install qemu-kvm \
+                libvirt-devel virt-top libguestfs-tools guestfs-tools"
+
+packages_lib=   "ncurses-compat-libs"
+
+packages_dev=   "arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ arm-none-eabi-newlib \
+                gcc g++ make cmake clang-tools-extra\
+                python3 python3-pip \
+                stlink valgrind"
 
 # Install basic dev packages
 sudo dnf check-update
 sudo dnf update -y
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install -y $packages
+sudo dnf install -y $packages_shell $packages_media $packages_tools \
+                    $packages_virt $packages_lib $packags_dev
 
 # Users and groups
 groups="dialout audio video networkmanager libvirtd docker"
