@@ -3,9 +3,9 @@
 pushd dotfiles
 
 # Alacritty
-rm -rf ~/.config/Alacritty
-mkdir -p ~/.config/Alacritty
-ln -s $PWD/alacritty.yml ~/.config/Alacritty/alacritty.yml
+rm -rf ~/.config/alacritty
+mkdir -p ~/.config/alacritty
+ln -s $PWD/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Starship
 rm -f ~/.config/starship.toml
