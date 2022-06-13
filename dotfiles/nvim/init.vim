@@ -59,3 +59,9 @@ imap {;<CR> {<CR>};<ESC>O
 " Experiments
 set wildmode=list:full
 
+" Print opened file in tmux bar
+if exists('$TMUX')
+  let windowName = system("tmux display-message -p '#W'")
+  autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'nvim(" . expand("%:t") . ")'")
+  autocmd VimLeave * call system("tmux rename-window " . windowName)
+endif
