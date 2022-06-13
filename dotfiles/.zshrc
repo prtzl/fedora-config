@@ -59,6 +59,7 @@ alias play='celluloid'
 alias poweroff='read -s \?"Poweroff? [ENTER]: " && if [ -z "$REPLY" ];then env poweroff;else echo "Canceled";fi'
 alias reboot='read -s \?"Reboot? [ENTER]: " && if [ -z "$REPLY" ];then env reboot;else echo "Canceled";fi'
 alias sl='sl -eade-999'
+alias tl='tmux list-sessions'
 
 
 # Suffix aliases
