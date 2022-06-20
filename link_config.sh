@@ -2,38 +2,30 @@
 
 pushd dotfiles
 
-# Alacritty
-rm -rf ~/.config/alacritty
-mkdir -p ~/.config/alacritty
-ln -s $PWD/alacritty.yml ~/.config/alacritty/alacritty.yml
+# basename must be inside ./dotfiles
+# path can be file or folder, no *
+function link_path()
+{
+    fpath=$(echo $1 | sed 's:/*$::')
+    mkdir -p $(dirname $fpath)
+    rm -rf $fpath
+    ln -s $PWD/$(basename $fpath) $fpath
+}
 
-# Starship
-rm -f ~/.config/starship.toml
-ln -s $PWD/starship.toml ~/.config/starship.toml
+paths="
+~/.config/alacritty/alacritty.yml
+~/.config/starship.toml
+~/.config/nvim
+~/.config/nix/nix.conf
+~/.direnvrc
+~/.tmux.conf
+~/.zshrc
+~/.tiorc
+"
 
-# Zsh
-rm -f ~/.zshrc
-ln -s $PWD/.zshrc ~/.zshrc
-
-# Git
-rm -f ~/.gitconfig
-ln -s $PWD/.gitconfig ~/.gitconfig
-
-# Neovim
-rm -rf ~/.config/nvim
-mkdir -p ~/.config/nvim
-ln -s $PWD/nvim/* ~/.config/nvim/
-
-# Nix
-rm -rf ~/.config/nix
-mkdir -p ~/.config/nix
-ln -s $PWD/nix.conf ~/.config/nix/nix.conf
-
-rm -f ~/.direnvrc
-ln -s $PWD/.direnvrc ~/.direnvrc
-
-# Tmux
-rm -f ~/.tmux.conf
-ln -s $PWD/.tmux.conf ~/.tmux.conf
+for p in $paths; do
+    echo Linking path: $p
+    link_path $p
+done
 
 popd
