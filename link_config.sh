@@ -7,20 +7,23 @@ pushd dotfiles
 function link_path()
 {
     fpath=$(echo $1 | sed 's:/*$::')
-    mkdir -p $(dirname $fpath)
+    dir=$(dirname $fpath)
+    if [[ "$dir" != $HOME ]]; then
+        mkdir -p $dir
+    fi
     rm -rf $fpath
     ln -s $PWD/$(basename $fpath) $fpath
 }
 
 paths="
-~/.config/alacritty/alacritty.yml
-~/.config/starship.toml
-~/.config/nvim
-~/.config/nix/nix.conf
-~/.direnvrc
-~/.tmux.conf
-~/.zshrc
-~/.tiorc
+$HOME/.config/alacritty/alacritty.yml
+$HOME/.config/starship.toml
+$HOME/.config/nvim
+$HOME/.config/nix/nix.conf
+$HOME/.direnvrc
+$HOME/.tmux.conf
+$HOME/.zshrc
+$HOME/.tiorc
 "
 
 for p in $paths; do
