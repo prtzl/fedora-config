@@ -37,7 +37,7 @@ dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 curl -o /etc/yum.repos.d/skype-stable.repo https://repo.skype.com/rpm/stable/skype-stable.repo
 echo "Installing packages!"
-dnf install -y $packages_shell $packages_media $packages_tools $packages_virt $packages_lib $packags_dev
+dnf install -y $packages_shell $packages_media $packages_tools $packages_virt $packages_lib $packages_dev
 "
 
 if [[ "$command" == "packages" ]]; then
