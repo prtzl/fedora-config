@@ -12,7 +12,8 @@ packages_tools="git net-tools xclip util-linux-user dnf-plugins-core flatpak \
 
 packages_virt="bridge-utils virt-manager libvirt virt-install qemu-kvm \
                 libvirt-devel virt-top libguestfs-tools guestfs-tools \
-                docker-ce docker-ce-cli containerd.io"
+                docker-ce docker-ce-cli containerd.io docker-compose \
+                podman podman-compose"
 
 packages_lib="ncurses-compat-libs"
 
@@ -29,11 +30,13 @@ fi
 
 # Install basic dev packages
 dnf check-update
-echo Installing packages!
+echo "Updating packages packages!"
 sudo sh -c "
 dnf update -y
 dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+curl -o /etc/yum.repos.d/skype-stable.repo https://repo.skype.com/rpm/stable/skype-stable.repo
+echo "Installing packages!"
 dnf install -y $packages_shell $packages_media $packages_tools $packages_virt $packages_lib $packags_dev
 "
 
