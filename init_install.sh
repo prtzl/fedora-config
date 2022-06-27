@@ -1,26 +1,16 @@
 #! /usr/bin/env sh
 
-packages_shell="zsh tmux zsh-syntax-highlighting starship alacritty fzf \
-                zsh-autosuggestions direnv neovim"
+packages_shell="zsh tmux zsh-syntax-highlighting starship alacritty fzf zsh-autosuggestions direnv neovim"
 
-packages_media="eog celluloid vlc xreader transmission gimp chromium \
-                skypeforlinux texlive-scheme-full texstudio"
+packages_media="eog celluloid vlc xreader transmission gimp chromium skypeforlinux texlive-scheme-full texstudio"
 
-packages_tools="git net-tools xclip util-linux-user dnf-plugins-core flatpak \
-                megasync tio neofetch htop subversion p7zip redshift \
-                wmctrl xdotool"
+packages_tools="git net-tools xclip util-linux-user dnf-plugins-core flatpak megasync tio neofetch htop subversion p7zip redshift wmctrl xdotool"
 
-packages_virt="bridge-utils virt-manager libvirt virt-install qemu-kvm \
-                libvirt-devel virt-top libguestfs-tools guestfs-tools \
-                docker-ce docker-ce-cli containerd.io docker-compose \
-                podman podman-compose"
+packages_virt="bridge-utils virt-manager libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools docker-ce docker-ce-cli containerd.io docker-compose podman podman-compose"
 
 packages_lib="ncurses-compat-libs"
 
-packages_dev="arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ arm-none-eabi-newlib \
-                gcc g++ make cmake clang-tools-extra\
-                python3 python3-pip \
-                stlink valgrind"
+packages_dev="arm-none-eabi-gcc-cs arm-none-eabi-gcc-cs-c++ arm-none-eabi-newlib gcc g++ make cmake clang-tools-extra python3 python3-pip stlink valgrind code"
 
 command=$1
 if [[ -z "$command" || ("$command" != "packages" && "$command" != "all") ]]; then
@@ -29,16 +19,15 @@ if [[ -z "$command" || ("$command" != "packages" && "$command" != "all") ]]; the
 fi
 
 # Install basic dev packages
+echo "Updating and installing packages!"
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo curl -o /etc/yum.repos.d/skype-stable.repo https://repo.skype.com/rpm/stable/skype-stable.repo
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 dnf check-update
-echo "Updating packages packages!"
-sudo sh -c "
-dnf update -y
-dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-curl -o /etc/yum.repos.d/skype-stable.repo https://repo.skype.com/rpm/stable/skype-stable.repo
-echo "Installing packages!"
-dnf install -y $packages_shell $packages_media $packages_tools $packages_virt $packages_lib $packages_dev
-"
+sudo dnf update -y
+sudo dnf install -y $packages_shell $packages_media $packages_tools $packages_virt $packages_lib $packages_dev 
 
 if [[ "$command" == "packages" ]]; then
     echo "Installed all packages!"
