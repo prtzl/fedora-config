@@ -60,6 +60,7 @@ alias poweroff='read -s \?"Poweroff? [ENTER]: " && if [ -z "$REPLY" ];then env p
 alias reboot='read -s \?"Reboot? [ENTER]: " && if [ -z "$REPLY" ];then env reboot;else echo "Canceled";fi'
 alias sl='sl -eade-999'
 alias tl='tmux list-sessions'
+alias fsr="wmctrl -i -r \$(xwininfo | grep xwininfo | awk '{if(NR==2) print \$4}') -b remove,fullscreen"
 
 
 # Suffix aliases
