@@ -24,6 +24,7 @@ $HOME/.direnvrc
 $HOME/.tmux.conf
 $HOME/.zshrc
 $HOME/.tiorc
+$HOME/.gitconfig
 "
 
 for p in $paths; do
