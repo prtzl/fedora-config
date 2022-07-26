@@ -14,6 +14,10 @@ set showcmd
 set showmatch
 set mouse=a
 
+" Cursor
+set guicursor=
+inoremap <Esc> <Esc>l
+
 " Clipboard
 set clipboard+=unnamedplus
 
