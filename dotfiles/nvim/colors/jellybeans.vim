@@ -88,7 +88,7 @@ endif
 " - g:jellybeans_use_gui_italics    (default = 1)
 " - g:jellybeans_use_term_italics   (default = 0)
 
-let s:background_color = "151515"
+let s:background_color = "0a0e14"
 
 if exists("g:jellybeans_overrides")
   let s:overrides = g:jellybeans_overrides
@@ -419,7 +419,7 @@ endfun
 call s:X("Normal","e8e8d3",s:background_color,"","White","")
 set background=dark
 
-call s:X("CursorLine","","1c1c1c","","",s:termBlack)
+call s:X("CursorLine","","172335","","",s:termBlack)
 call s:X("CursorColumn","","1c1c1c","","",s:termBlack)
 
 " Some of Terminal.app's default themes have a cursor color
@@ -459,9 +459,9 @@ call s:X("Visual","","404040","","",s:termBlack)
 call s:X("Cursor",s:background_color,"b0d0f0","","","")
 
 call s:X("LineNr","605958",s:background_color,"NONE",s:termBlack,"")
-call s:X("CursorLineNr","ccc5c4","","NONE","White","")
-call s:X("Comment","888888","","italic","Grey","")
-call s:X("Todo","c7c7c7","","bold","White",s:termBlack)
+call s:X("CursorLineNr","ccc5c4","59606a","NONE","White","")
+call s:X("Comment","95e6cb","","italic","","")
+call s:X("Todo","790088","dacc7f","bold","White",s:termBlack)
 
 call s:X("StatusLine","000000","dddddd","italic","","White")
 call s:X("StatusLineNC","ffffff","403c41","italic","White","Black")

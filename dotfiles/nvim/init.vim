@@ -18,15 +18,6 @@ set mouse=a
 if has('termguicolors')
   set termguicolors
 endif
-
-" The configuration options should be placed before `colorscheme `.
-let g:jellybeans_overrides = {
-\    'Todo': { 'guifg': '303030', 'guibg': 'f0f000',
-\              'ctermfg': 'Black', 'ctermbg': 'Yellow',
-\              'attr': 'bold' },
-\   'background': { 'guibg': '0a0e14' },
-\    'Comment': { 'guifg': 'cccccc' },
-\}
 colorscheme jellybeans
 
 " Improved cpp
