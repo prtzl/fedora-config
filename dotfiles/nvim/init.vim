@@ -13,6 +13,7 @@ set showcmd
 set showmode
 set showmatch
 set mouse=a
+set laststatus=0
 
 " Colorscheme
 colorscheme jellybeans
