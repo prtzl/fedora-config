@@ -15,9 +15,6 @@ set showmatch
 set mouse=a
 
 " Colorscheme
-if has('termguicolors')
-  set termguicolors
-endif
 colorscheme jellybeans
 
 " Improved cpp
