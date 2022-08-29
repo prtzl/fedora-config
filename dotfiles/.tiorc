@@ -16,4 +16,10 @@ color = 12
 [usb devices]
 pattern = usb([0-9]*)
 tty = /dev/ttyUSB%s
-color = 13
+color = 13i
+
+[xil]
+pattern = xil([0-9]{1})
+tty = /dev/serial/by-id/usb-Xilinx_JTAG+3Serial_41678-if0%s-port0
+color = 14
+
