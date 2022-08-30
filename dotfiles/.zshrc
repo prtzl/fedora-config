@@ -61,7 +61,7 @@ alias reboot='read -s \?"Reboot? [ENTER]: " && if [ -z "$REPLY" ];then env reboo
 alias sl='sl -eade-999'
 alias tl='tmux list-sessions'
 alias fsr="wmctrl -i -r \$(xwininfo | grep xwininfo | awk '{if(NR==2) print \$4}') -b remove,fullscreen"
-
+alias alacritty="nixGLIntel alacritty"
 
 # Suffix aliases
 alias -s {txt,md,c,cpp,h,hpp,py,vhd}=vi
@@ -85,5 +85,11 @@ eval "$(starship init zsh)"
 # Nix
 export GIT_SSH_COMMAND="/usr/bin/ssh"
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+. $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
+# For non nixos :/
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:~/.nix-profile/share
+cp -f ~/.nix-profile/share/applications/*.desktop ~/.local/share/applications/
 
 eval "$(direnv hook zsh)"

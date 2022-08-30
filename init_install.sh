@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
 
-packages_shell="zsh tmux zsh-syntax-highlighting starship alacritty fzf zsh-autosuggestions direnv neovim"
+packages_shell="zsh zsh-syntax-highlighting starship fzf zsh-autosuggestions direnv"
 
 packages_media="eog celluloid vlc xreader transmission gimp chromium skypeforlinux texlive-scheme-full texstudio"
 
