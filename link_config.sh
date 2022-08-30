@@ -15,16 +15,16 @@ function link_path()
     ln -s $PWD/$(basename $fpath) $fpath
 }
 
+# $HOME/.config/nvim
+# $HOME/.tiorc
+# $HOME/.gitconfig
+# $HOME/.tmux.conf
 paths="
 $HOME/.config/alacritty/alacritty.yml
 $HOME/.config/starship.toml
-$HOME/.config/nvim
 $HOME/.config/nix/nix.conf
 $HOME/.direnvrc
-$HOME/.tmux.conf
 $HOME/.zshrc
-$HOME/.tiorc
-$HOME/.gitconfig
 "
 
 for p in $paths; do
