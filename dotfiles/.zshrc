@@ -53,7 +53,7 @@ alias gvim='nvim-qt'
 alias img='eog'
 alias l='ls -la'
 alias ll='ls -l'
-alias ls='ls --group-directories-first --color=auto'
+alias ls='exa --group-directories-first --color=auto'
 alias pdf='evince'
 alias play='celluloid'
 alias poweroff='read -s \?"Poweroff? [ENTER]: " && if [ -z "$REPLY" ];then env poweroff;else echo "Canceled";fi'
@@ -61,7 +61,6 @@ alias reboot='read -s \?"Reboot? [ENTER]: " && if [ -z "$REPLY" ];then env reboo
 alias sl='sl -eade-999'
 alias tl='tmux list-sessions'
 alias fsr="wmctrl -i -r \$(xwininfo | grep xwininfo | awk '{if(NR==2) print \$4}') -b remove,fullscreen"
-alias alacritty="nixGLIntel alacritty"
 
 # Suffix aliases
 alias -s {txt,md,c,cpp,h,hpp,py,vhd}=vi
