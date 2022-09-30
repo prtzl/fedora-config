@@ -12,7 +12,7 @@ _comp_options+=(globdots)
 
 # ENV variables
 export EDITOR="nvim"
-export TERM="xterm-256color"
+#export TERM="xterm-256color"
 
 
 # History
